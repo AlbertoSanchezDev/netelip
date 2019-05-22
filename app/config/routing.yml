@@ -1,0 +1,12 @@
+homepage:
+    pattern:   /
+    defaults:  { _controller: ProductBundle:Product:index }
+add_product:
+    pattern:   /producto/add/
+    defaults:  { _controller: ProductBundle:Product:add }
+edit_product:
+    pattern:   /producto/edit/{id}
+    defaults:  { _controller: ProductBundle:Product:edit }
+delete_product:
+    pattern:   /producto/delete/{id}
+    defaults:  { _controller: ProductBundle:Product:delete }

@@ -1,0 +1,20 @@
+<a href="{{ path('add_product') }}">Añadir nuevo producto</a>
+
+<table border='1'>
+    <tr>  
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Precio unidad</th>
+        <th>Acciones</th>
+    </tr>
+    {% for p in products %}
+    <tr>  
+        <td>{{ p.id }}</td>
+        <td>{{ p.nombre }}</td>
+        <td>{{ p.cantidad }}</td>
+        <td>{{ p.precio }}</td>
+        <td><a href="{{ path('edit_product', {'id': p.id}) }}">Editar</a> | <a href="{{ path('delete_product', {'id': p.id}) }}"  onclick="return confirm('Estas seguro de que deseas borrar el producto {{ p.id }}?')">Borrar</a></td>
+    </tr>
+    {% endfor %}
+</table>
